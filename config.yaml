@@ -1,0 +1,210 @@
+# BeyondBots Configuration
+
+# X search queries / hashtags to monitor
+queries:
+  - "#bollywood"
+  - "#tollywood"
+  - "#kollywood"
+  - "#movies"
+
+# Models configured for NLP stages
+model_names:
+  dense_embeddings: "google/muril-base-cased"
+  sentiment_model: "cardiffnlp/twitter-xlm-roberta-base-sentiment"
+  anthropic_model: "claude-3-5-sonnet-20241022"  # Fallback: "claude-sonnet-4-6"
+
+# Scoping constraints
+collection_settings:
+  max_posts_per_query: 100
+  time_filter: "all"  # Options: all, year, month, week, day
+  input_file: "data/Animal_synthetic_x_posts.csv"       # If specified (e.g. "./data/raw/reviews.csv"), parses local reviews instead of calling X API
+
+# Indian Film Releases & their configuration
+films:
+  - id: "jawan_2023"
+    title: "Jawan"
+    imdb_id: "tt15354916"
+    director: "Atlee"
+    cast: ["Shah Rukh Khan", "Nayanthara", "Vijay Sethupathi", "Deepika Padukone", "Sanya Malhotra", "Priyamani"]
+    release_date: "2023-09-07"
+    date_window:
+      start: "2023-09-01"
+      end: "2023-09-14"
+    keywords:
+      - "jawan"
+      - "srk"
+      - "shah rukh khan"
+      - "atlee"
+    fan_markers:
+      - "srk"
+      - "king khan"
+      - "badshah"
+      - "srkian"
+      - "thalapathy" # Atlee/Vijay connection
+      - "anirudh"
+    promotional_keywords:
+      - "blockbuster"
+      - "masterpiece"
+      - "mega hit"
+      - "atlee magic"
+      - "historic opening"
+      - "all time record"
+      - "must watch"
+      - "pure cinema"
+      - "megastar"
+
+  - id: "pushpa2_2024"
+    title: "Pushpa 2"
+    imdb_id: "tt15239678"
+    director: "Sukumar"
+    cast: ["Allu Arjun", "Rashmika Mandanna", "Fahadh Faasil", "Jagapathi Babu"]
+    release_date: "2024-12-05"
+    date_window:
+      start: "2024-11-28"
+      end: "2024-12-12"
+    keywords:
+      - "pushpa"
+      - "allu arjun"
+      - "rashmika"
+      - "sukumar"
+    fan_markers:
+      - "icon star"
+      - "allu arjun"
+      - "bunny"
+      - "pushpa raj"
+      - "thaggede le"
+    promotional_keywords:
+      - "box office rampage"
+      - "unprecedented"
+      - "mass film of the year"
+      - "records broken"
+      - "sensational"
+      - "blockbuster"
+      - "goosebumps"
+
+  - id: "animal_2023"
+    title: "Animal"
+    imdb_id: "tt13751694"
+    director: "Sandeep Reddy Vanga"
+    cast: ["Ranbir Kapoor", "Anil Kapoor", "Bobby Deol", "Rashmika Mandanna", "Triptii Dimri"]
+    release_date: "2023-12-01"
+    date_window:
+      start: "2023-11-25"
+      end: "2023-12-08"
+    keywords:
+      - "animal"
+      - "ranbir"
+      - "vanga"
+      - "bobby"
+    fan_markers:
+      - "rk"
+      - "ranbir kapoor"
+      - "animalarmy"
+      - "vanga"
+    promotional_keywords:
+      - "blockbuster"
+      - "masterpiece"
+      - "whistle"
+      - "mass"
+      - "box office"
+      - "records"
+
+  - id: "jailer_2023"
+    title: "Jailer"
+    imdb_id: "tt11663228"
+    director: "Nelson Dilipkumar"
+    cast: ["Rajinikanth", "Vinayakan", "Ramya Krishnan", "Mohanlal", "Shiva Rajkumar", "Jackie Shroff"]
+    release_date: "2023-08-10"
+    date_window:
+      start: "2023-08-03"
+      end: "2023-08-17"
+    keywords:
+      - "jailer"
+      - "rajini"
+      - "thalaivar"
+      - "nelson"
+    fan_markers:
+      - "superstar"
+      - "rajinikanth"
+      - "thalaivar"
+      - "jailerarmy"
+    promotional_keywords:
+      - "blockbuster"
+      - "masterpiece"
+      - "mass"
+      - "records"
+
+  - id: "kalki_2024"
+    title: "Kalki_2898_AD"
+    imdb_id: "tt21867150"
+    director: "Nag Ashwin"
+    cast: ["Prabhas", "Amitabh Bachchan", "Kamal Haasan", "Deepika Padukone", "Disha Patani"]
+    release_date: "2024-06-27"
+    date_window:
+      start: "2024-06-20"
+      end: "2024-07-04"
+    keywords:
+      - "kalki"
+      - "prabhas"
+      - "amitabh"
+      - "kamal"
+    fan_markers:
+      - "darling"
+      - "rebel star"
+      - "prabhas"
+      - "kalkiarmy"
+    promotional_keywords:
+      - "blockbuster"
+      - "masterpiece"
+      - "visual spectacle"
+      - "records"
+
+  - id: "rrr_2022"
+    title: "RRR"
+    imdb_id: "tt8178634"
+    director: "S.S. Rajamouli"
+    cast: ["N.T. Rama Rao Jr.", "Ram Charan", "Ajay Devgn", "Alia Bhatt", "Shriya Saran"]
+    release_date: "2022-03-25"
+    date_window:
+      start: "2022-03-18"
+      end: "2022-04-01"
+    keywords:
+      - "rrr"
+      - "rajamouli"
+      - "tarak"
+      - "charan"
+    fan_markers:
+      - "ntr"
+      - "ram charan"
+      - "tarak"
+      - "cherry"
+    promotional_keywords:
+      - "blockbuster"
+      - "masterpiece"
+      - "naatu naatu"
+      - "records"
+
+  - id: "pathaan_2023"
+    title: "Pathaan"
+    imdb_id: "tt12844910"
+    director: "Siddharth Anand"
+    cast: ["Shah Rukh Khan", "Deepika Padukone", "John Abraham", "Dimple Kapadia", "Ashutosh Rana"]
+    release_date: "2023-01-25"
+    date_window:
+      start: "2023-01-18"
+      end: "2023-02-01"
+    keywords:
+      - "pathaan"
+      - "srk"
+      - "deepika"
+      - "john"
+    fan_markers:
+      - "srk"
+      - "king khan"
+      - "badshah"
+      - "pathaanarmy"
+    promotional_keywords:
+      - "blockbuster"
+      - "masterpiece"
+      - "records"
+

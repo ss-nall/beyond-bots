@@ -1,0 +1,3 @@
+# Configure uv to copy files instead of hardlinking, 
+# to support directories synchronized by cloud storage like OneDrive.
+link-mode = "copy"

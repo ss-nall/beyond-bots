@@ -1,0 +1,20 @@
+# BeyondBots gitignore
+
+# Ignored data directories (as requested)
+data/
+data_test/
+
+# Python environment & cache
+.venv/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.pytest_cache/
+.ipynb_checkpoints/
+
+# Environment variables
+.env
+.env.*
+!.env.example
+
